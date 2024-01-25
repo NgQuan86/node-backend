@@ -1,6 +1,8 @@
+const connection = require('../config/database');
+
 
 const getHomepage = (req,res)=> {
-    res.send('Hello world with nodemon')
+    return res.render('home.ejs')
 }
 const abc = (req,res)=> {
     
