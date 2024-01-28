@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getHomepage, abc, EJS } = require('../controller/homeController');
+const { getHomepage, abc, EJS, postCreateUser } = require('../controller/homeController');
 
 //khai bao route
 
@@ -11,8 +11,10 @@ const { getHomepage, abc, EJS } = require('../controller/homeController');
 
 router.get('/', getHomepage); // goi ham da thuc thi o homeController
 
-router.get('/abc', abc ) 
+router.get('/abc', abc );
 
-router.get('/xyz', EJS) 
+router.get('/xyz', EJS);
+
+router.post('/create-user', postCreateUser); 
 
 module.exports = router;

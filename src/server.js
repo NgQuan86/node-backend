@@ -12,22 +12,24 @@ const webRouter = require('./routes/web'); // khong can chinh xac ten bien expor
 //----------------------------------+---------------------------------------------
 
 
-//config template engine from viewEngine.js
+
+//config template engine from viewEngine.js (nen khai bao tren routers)
 configViewEngine(app); // truyen ham express vao
 
 //khai bao routes
 app.use('/',webRouter); // co the them '/' phia truoc de tao them duong dan 
 
 
+
 //simple query
 connection.query(
   'SELECT * FROM `users`',
   function (err, results, fields) { //err for check error with if()
-    
     console.log(results); // results contains rows returned by server
     // console.log(fields); fields contains extra meta data about results, if available
   }
 );
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
