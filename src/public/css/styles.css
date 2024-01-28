@@ -46,3 +46,27 @@ button{
     margin:  5px;
     cursor: pointer;
 }
+
+
+table{
+  border-collapse: collapse;
+  width: 100%;
+}
+th,td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover{
+  background-color: cadetblue;
+}
+
+.table-container {
+  padding: 15px 20px;
+}
+.title {
+  font-size: 25px;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
