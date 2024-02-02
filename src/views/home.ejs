@@ -15,21 +15,70 @@
     </div>
     <div class="table-container">
         <div class="title">List users</div>
-        <table>
-            <tr>
-                <th>ID</th>
-                <th>Email</th>
-                <th>Name</th>
-                <th>City</th>
-            </tr>
-            <tr>
-                <td>d</td>
-                <td>d</td>  
-                <td>d</td>
-                <td>d</td>
-            </tr>
-            
-        </table>
+
+        <!-- use EJS with <%= %> -->
+        <!-- <%= JSON.stringify(listUser) %> -->
+
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Action</th>
+                </tr>
+
+                <!-- For -->
+                <!-- <% for(let i=0; i < listUser.length; i++) { %>
+                    
+                    <tr>
+                        <td>
+                            <%= listUser[i].id %>
+                        </td>
+                        <td>
+                            <%= listUser[i].email %>
+                        </td>
+                        <td>
+                            <%= listUser[i].name %>
+                        </td>
+                        <td>
+                            <%= listUser[i].city %>
+                        </td>
+                        <td>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </td>
+                    </tr>
+                <% } %> -->
+
+
+                <!-- FOREACH  -->
+                <% listUser.forEach((user,index)=> { %>
+                    <!-- let {id,email,name,city} = listUser -->
+                    <tr>
+                        <td>
+                             <%= user.id %> <!-- - <%= index %> -->
+                        </td>
+                        <td>
+                            <%= user.email %>
+                        </td>
+                        <td>
+                            <%= user.name %>
+                        </td>
+                        <td>
+                            <%= user.city %>
+                        </td>
+                        <td>
+                            <button><a href="/update/<%= user.id %>">Edit</a></button>
+                            <form action="/delete-user/<%= user.id %>" method="post">
+                                <button>Delete</button>
+                            </form>
+                            
+                        </td>
+                    </tr>
+                    <% }); %>
+
+            </table>
     </div>
 </body>
 

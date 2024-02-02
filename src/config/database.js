@@ -1,6 +1,6 @@
 require('dotenv').config();
 
-const mysql = require('mysql2/promise'); // them promise de xu ly bat dong bo async await
+const mysql = require('mysql2/promise'); // add promise => async await
 
 //------creat a connection for each user------
 

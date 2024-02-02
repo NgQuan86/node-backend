@@ -11,7 +11,7 @@ const configViewEngine = (app) => { //tao ham de chay ung dung app
     app.set('views', path.join('./src', 'views')) //set vao ('./src', 'views')
     app.set('view engine', 'ejs') // thay pugs bang ejs
 
-    //config static file : css, image, js (thuan tien cho viec lay du lieu trong public, quan ly file static)
+    //config static file : css, image, js (thuan tien cho viec lay du lieu trong public, manage files static)
     // app.use(express.static(path.join(__dirname, 'public'))); neu trong phan server.js can dung __dirname delay truc tiep tu folder src 
     app.use(express.static(path.join('./src', 'public')));
 

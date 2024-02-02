@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { getHomepage, abc, EJS, postCreateUser, getCreatePage } = require('../controller/homeController');
+const { getHomepage, postUpdateUser, EJS, postCreateUser, getCreatePage, getUpdatePage, postDeleteUser, postHandleDeleteUser } = require('../controller/homeController');
 
 //khai bao route
 
@@ -11,12 +11,18 @@ const { getHomepage, abc, EJS, postCreateUser, getCreatePage } = require('../con
 
 router.get('/', getHomepage); // goi ham da thuc thi o homeController
 
-router.get('/abc', abc );
-
 router.get('/xyz', EJS);
 
 router.get('/create', getCreatePage);
 
+router.get('/update/:id', getUpdatePage ); // them ( /:id -> cach khai bao route dong) de access vao trang co id tuong ung
+
 router.post('/create-user', postCreateUser); 
+
+router.post('/update-user', postUpdateUser);
+
+router.post('/delete-user/:id', postDeleteUser); 
+
+router.post('/delete-user', postHandleDeleteUser); 
 
 module.exports = router;
