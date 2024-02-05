@@ -12,7 +12,6 @@ const getHomepage = async (req, res) => {
     return res.render('home.ejs', { listUser: results });
 }
 
-
 //
 const EJS = (req, res) => {
 
@@ -42,7 +41,7 @@ const postCreateUser = async (req, res) => {  // can khoi tao app ben viewEngine
     console.log(results);
 }
 
-// get info user by id
+// page get info-user by id
 const getUpdatePage = async (req, res) => {
 
     const UserId = req.params.id;
@@ -52,7 +51,7 @@ const getUpdatePage = async (req, res) => {
     res.render('edit.ejs', { userEdit: user });
 }
 
-//
+//function update
 const postUpdateUser = async (req, res) => {  
     
     let { email, city, userId } = req.body
@@ -72,6 +71,7 @@ const postDeleteUser = async (req,res) => {
     res.render('delete.ejs', {userEdit : user})
 }
 
+//function delete
 const postHandleDeleteUser = async (req,res) => {
     const Id = req.body.userId
     

@@ -24,6 +24,7 @@ const updateUserById = async (email, name, city, userId) => {
     );
 }
 
+
 //
 const deleteUserById = async (Id) => {
     let [results, fields] = await connection.query(
